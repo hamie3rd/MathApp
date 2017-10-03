@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mathapp.BasicOperatorPractice">
+
+    <Button
+        android:id="@+id/buttonGo"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="go"
+        android:text="Go!"
+        android:textSize="150sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="64dp">
+
+        <Button
+            android:id="@+id/buttonTL"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@color/colorAccent"
+            android:onClick="answerQuestion"
+            android:tag="0"
+            android:text="TL"
+            android:textSize="80sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/buttonTR"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/buttonTL"
+            android:layout_toRightOf="@+id/buttonTL"
+            android:background="@color/colorPrimary"
+            android:onClick="answerQuestion"
+            android:tag="1"
+            android:text="TR"
+            android:textSize="80sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/buttonBL"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/buttonTL"
+            android:background="@android:color/holo_green_light"
+            android:onClick="answerQuestion"
+            android:tag="2"
+            android:text="BL"
+            android:textSize="80sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/buttonBR"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/buttonTR"
+            android:layout_toEndOf="@+id/buttonBL"
+            android:layout_toRightOf="@+id/buttonBL"
+            android:background="@android:color/holo_orange_dark"
+            android:onClick="answerQuestion"
+            android:tag="3"
+            android:text="BR"
+            android:textSize="80sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_orange_light"
+        android:gravity="center"
+        android:text="0/0"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTimer"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
+        android:text="30s"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="11 + 13"
+        android:textColor="@android:color/black"
+        android:textSize="70sp"
+        android:visibility="invisible"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewTotal" />
+
+    <TextView
+        android:id="@+id/textViewAnswer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Correct!"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <Button
+        android:id="@+id/buttonPlayAgain"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="4dp"
+        android:onClick="go"
+        android:text="Play Again"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAnswer" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="4dp"
+        android:onClick="back"
+        android:text="Back"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAnswer" />
+</android.support.constraint.ConstraintLayout>
